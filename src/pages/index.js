@@ -8,8 +8,36 @@ import { LinkArrow } from "@/components/Icons";
 import Hireme from "@/components/Hireme";
 import lightBulB from "../../public/images/svgs/miscellaneous_icons_1.svg";
 import TransitionEffect from "@/components/TransitionEffect";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function Home() {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  // Function to handle opening the contact form
+  const handleOpenContactForm = () => {
+    setIsContactFormOpen(true);
+  };
+
+  function sendEmail(e) {
+    e.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
+
+    emailjs
+      .sendForm(
+        "service_o4x1czt",
+        "template_savk2cf",
+        e.target,
+        "gWpUX5aYXqjcZPRhA"
+      )
+      .then(
+        (result) => {
+          window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  }
   return (
     <>
       <Head>
@@ -50,13 +78,12 @@ export default function Home() {
                 >
                   Resume <LinkArrow className=" w-6 ml-1 " />
                 </Link>
-                <Link
-                  href="mailto:manohargupta0806@gmail.com"
-                  target="blank"
+                <button
+                  onClick={handleOpenContactForm} // Add onClick event to open contact form
                   className=" ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
                 >
                   Contact
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -66,6 +93,100 @@ export default function Home() {
           <Image src={lightBulB} alt="Image" className=" w-full h-auto" />
         </div>
       </main>
+      {isContactFormOpen && (
+        <div
+          className="fixed bg-dark/90 dark:bg-light/75 backdrop-blur-md py-32 sm:py-24 rounded-lg min-w-[90vw] 
+         flex flex-col justify-between items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+        >
+          <button
+            onClick={() => setIsContactFormOpen(false)} // Add onClick event to close the contact form
+            className="absolute top-0 right-0 m-4 text-light flex flex-col"
+          >
+            <span
+              className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm -rotate-45 translate-y-1 `}
+            ></span>
+            <span
+              className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm rotate-45 translate-y-1 `}
+            ></span>
+          </button>
+          <div className=" min-w-[40%] bg-light dark:bg-dark dark:bg-opacity-50 p-8 rounded-lg">
+            <form
+              className=" mx-auto p-6 bg-light rounded-md shadow-md"
+              onSubmit={sendEmail}
+            >
+              <div className="mb-4">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-700 font-bold mb-2"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="from_name"
+                  className="w-full border rounded-md p-2 focus:outline-none focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-700 font-bold mb-2"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="from_email"
+                  className="w-full border rounded-md p-2 focus:outline-none focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="Phone Number"
+                  className="block text-gray-700 font-bold mb-2"
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="telephone"
+                  pattern="[0-9]*"
+                  id="phonenumber"
+                  name="from_phone_number"
+                  className="w-full border rounded-md p-2 focus:outline-none focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div className="mb-6">
+                <label
+                  htmlFor="message"
+                  className="block text-gray-700 font-bold mb-2"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  className="w-full border rounded-md p-2 focus:outline-none focus:border-blue-500"
+                  required
+                ></textarea>
+              </div>
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }

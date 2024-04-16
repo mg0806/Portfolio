@@ -96,11 +96,11 @@ export default function Home() {
       {isContactFormOpen && (
         <div
           className="fixed bg-dark/90 dark:bg-light/75 backdrop-blur-md py-32 sm:py-24 rounded-lg min-w-[90vw] 
-         flex flex-col justify-between items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+         flex flex-col justify-between items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 sm:min-w-[100vw] "
         >
           <button
             onClick={() => setIsContactFormOpen(false)} // Add onClick event to close the contact form
-            className="absolute top-0 right-0 m-4 text-light flex flex-col"
+            className="absolute sm:relative top-0 right-0 m-4 text-light flex flex-col"
           >
             <span
               className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm -rotate-45 translate-y-1 `}
@@ -109,7 +109,7 @@ export default function Home() {
               className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm rotate-45 translate-y-1 `}
             ></span>
           </button>
-          <div className=" min-w-[40%] bg-light dark:bg-dark dark:bg-opacity-50 p-8 rounded-lg">
+          <div className=" min-w-[40%] sm:w-full bg-light dark:bg-dark dark:bg-opacity-50 p-8 rounded-lg">
             <form
               className=" mx-auto p-6 bg-light rounded-md shadow-md"
               onSubmit={sendEmail}

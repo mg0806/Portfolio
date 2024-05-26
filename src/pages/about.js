@@ -2,7 +2,7 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
-import ProfilePic from "../../public/images/profile/developer-pic-2.jpg";
+import ProfilePic from "../../public/images/profile/developer-pic-2.png";
 import AnimatedNumbers from "@/components/AnimatedNumbers";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";

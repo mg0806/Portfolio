@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "./Layout";
 import Link from "next/link";
+import ChatBot from "./ChatBot";
 
 const Footer = () => {
   return (
@@ -23,8 +24,8 @@ const Footer = () => {
             MTSHOP
           </Link>
         </div>
-        <Link href="/">Chat With Me</Link>
       </Layout>
+      <ChatBot />
     </footer>
   );
 };

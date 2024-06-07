@@ -5,7 +5,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import projectImage from "../../public/images/projects/crypto-screener-cover-image.jpg";
+import projectImage1 from "../../public/images/projects/MT-shop.png";
+import projectImage2 from "../../public/images/projects/Ecommerce-app.png";
+import projectImage3 from "../../public/images/projects/gew.png";
+import projectImage4 from "../../public/images/projects/portfolio.png";
+import projectImage5 from "../../public/images/projects/old-portfolio.png";
+import projectImage6 from "../../public/images/projects/Kanban.png";
+
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
 
@@ -140,56 +146,56 @@ const projects = () => {
             <div className=" col-span-12">
               <FeaturedProjects
                 title="Ecommerce Website"
-                img={projectImage}
+                img={projectImage1}
                 summary="Experience Convenience, Choice, and Quality: Your Ultimate Shopping Destination for all Your Needs."
                 link="https://mt-shop.vercel.app"
-                github="/"
+                github="/projects"
                 type="Featured Project"
               />
             </div>
             <div className=" col-span-6 sm:col-span-12">
               <Project
-                title="Ecommerce Website"
-                img={projectImage}
-                link="https://mt-shop.vercel.app"
-                github="/"
+                title="Ecommerce App"
+                img={projectImage2}
+                link="https://e-commeerce-app-nine.vercel.app/"
+                github="https://github.com/mg0806/E-commeerce_App"
                 type="Featured Project"
               />
             </div>
             <div className=" col-span-6 sm:col-span-12">
               <Project
-                title="Ecommerce Website"
-                img={projectImage}
-                link="https://mt-shop.vercel.app"
-                github="/"
+                title="GEW"
+                img={projectImage3}
+                link="https://gew-vert.vercel.app/"
+                github="https://github.com/mg0806/gew"
                 type="Featured Project"
               />
             </div>
             <div className=" col-span-12">
               <FeaturedProjects
-                title="Ecommerce Website"
-                img={projectImage}
+                title="Portfolio"
+                img={projectImage4}
                 summary="Experience Convenience, Choice, and Quality: Your Ultimate Shopping Destination for all Your Needs."
-                link="https://mt-shop.vercel.app"
-                github="/"
+                link="https://portfolio-manohar-guptas-projects.vercel.app/"
+                github="https://github.com/mg0806/Portfolio"
                 type="Featured Project"
               />
             </div>
             <div className=" col-span-6 sm:col-span-12">
               <Project
-                title="Ecommerce Website"
-                img={projectImage}
-                link="https://mt-shop.vercel.app"
-                github="/"
+                title="Old-portfolio"
+                img={projectImage5}
+                link="https://mg0806.github.io/portfolio.gtihub.io/"
+                github="https://github.com/mg0806/portfolio.gtihub.io"
                 type="Featured Project"
               />
             </div>
             <div className=" col-span-6 sm:col-span-12">
               <Project
-                title="Ecommerce Website"
-                img={projectImage}
-                link="https://mt-shop.vercel.app"
-                github="/"
+                title="Kanban"
+                img={projectImage6}
+                link="https://kanban-tau-ruby.vercel.app/"
+                github="https://github.com/mg0806/Kanban"
                 type="Featured Project"
               />
             </div>

@@ -54,40 +54,20 @@ const Experience = () => {
           />
           <ul className=" w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
             <Details
-              positions="Website Secretary"
-              company="Prakarsh24"
-              companyLink="https://prakarsh.org"
-              time="Jan 2024 - Feb 2024"
-              work="As the website secretary for the national event 'Prakarsh' I oversee all aspects of the websites' functionality and content.
-               From design to updates,my goal is to ensure a seamless digital experience for participants and attendees, reflecting the events'
-               significance and fostering engagement across diverse audiences."
+              positions="Sofware Developer Engineer Intern"
+              company="Hex Wireless"
+              companyLink="https://hexwireless.com"
+              time="July 2024 - Present"
+              work="I am currently an SDE intern at Hex Wireless Company, where I contribute to various 
+              software development projects, enhancing my skills and gaining valuable industry experience"
             />
             <Details
-              positions="Website Secretary"
-              company="Prakarsh24"
-              companyLink="https://prakarsh.org"
-              time="Jan 2024 - Feb 2024"
-              work="As the website secretary for the national event 'Prakarsh' I oversee all aspects of the websites' functionality and content.
-               From design to updates,my goal is to ensure a seamless digital experience for participants and attendees, reflecting the events'
-               significance and fostering engagement across diverse audiences."
-            />
-            <Details
-              positions="Website Secretary"
-              company="Prakarsh24"
-              companyLink="https://prakarsh.org"
-              time="Jan 2024 - Feb 2024"
-              work="As the website secretary for the national event 'Prakarsh' I oversee all aspects of the websites' functionality and content.
-               From design to updates,my goal is to ensure a seamless digital experience for participants and attendees, reflecting the events'
-               significance and fostering engagement across diverse audiences."
-            />
-            <Details
-              positions="Website Secretary"
-              company="Prakarsh24"
-              companyLink="https://prakarsh.org"
-              time="Jan 2024 - Feb 2024"
-              work="As the website secretary for the national event 'Prakarsh' I oversee all aspects of the websites' functionality and content.
-               From design to updates,my goal is to ensure a seamless digital experience for participants and attendees, reflecting the events'
-               significance and fostering engagement across diverse audiences."
+              positions="Software Developer Intern"
+              company="SVIT"
+              companyLink="https://svitvasad.ac.in"
+              time="May 2024 - July 2024"
+              work="I worked as a software developer at SVIT Vasad, where I was responsible for developing and maintaining the 
+              college's official website, ensuring its functionality and usability"
             />
             <Details
               positions="Website Secretary"

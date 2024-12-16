@@ -54,7 +54,7 @@ const Experience = () => {
           />
           <ul className=" w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
             <Details
-              positions="Sofware Developer Engineer Intern"
+              positions="Sofware Developer Engineer"
               company="Hex Wireless"
               companyLink="https://hexwireless.com"
               time="July 2024 - Present"

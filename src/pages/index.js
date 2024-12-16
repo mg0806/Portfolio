@@ -100,13 +100,14 @@ export default function Home() {
         >
           <button
             onClick={() => setIsContactFormOpen(false)} // Add onClick event to close the contact form
-            className="absolute sm:relative top-0 right-0 m-4 text-light flex flex-col"
+            className="absolute sm:relative sm:top-0 sm:left-32 top-8 right-4 m-4 text-light flex flex-col z-60"
+            aria-label="Close"
           >
             <span
-              className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm -rotate-45 translate-y-1 `}
+              className={`bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm -rotate-45 translate-y-1`}
             ></span>
             <span
-              className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm rotate-45 translate-y-1 `}
+              className={`bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm rotate-45 translate-y-1`}
             ></span>
           </button>
           <div className=" min-w-[40%] sm:w-full bg-light dark:bg-dark dark:bg-opacity-50 p-8 rounded-lg">

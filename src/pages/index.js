@@ -99,16 +99,38 @@ export default function Home() {
          flex flex-col justify-between items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 sm:min-w-[100vw] "
         >
           <button
+            onClick={() => setIsContactFormOpen(false)}
+            className="absolute sm:relative sm:top-0 sm:left-32 top-8 right-4 m-4 text-light flex flex-col z-60"
+            aria-label="Close"
+          >
+            {/* Close Icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10 text-light dark:text-dark hover:text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          {/* <button
             onClick={() => setIsContactFormOpen(false)} // Add onClick event to close the contact form
-            className="absolute sm:relative top-0 right-0 m-4 text-light flex flex-col"
+            className="absolute sm:relative sm:top-0 sm:left-32 top-8 right-4 m-4 text-light flex flex-col z-60"
+            aria-label="Close"
           >
             <span
-              className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm -rotate-45 translate-y-1 `}
+              className={`bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm -rotate-45 translate-y-1`}
             ></span>
             <span
-              className={` bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm rotate-45 translate-y-1 `}
+              className={`bg-light dark:bg-dark transition-all duration-300 block h-0.5 w-6 rounded-sm rotate-45 translate-y-1`}
             ></span>
-          </button>
+          </button> */}
           <div className=" min-w-[40%] sm:w-full bg-light dark:bg-dark dark:bg-opacity-50 p-8 rounded-lg">
             <form
               className=" mx-auto p-6 bg-light rounded-md shadow-md"

@@ -58,7 +58,7 @@ const Experience = () => {
               company="Hex Wireless"
               companyLink="https://hexwireless.com"
               time="July 2024 - Present"
-              work="I am currently an SDE intern at Hex Wireless Company, where I contribute to various 
+              work="I have done my SDE internship at Hex Wireless Company, where I contribute to various 
               software development projects, enhancing my skills and gaining valuable industry experience"
             />
             <Details

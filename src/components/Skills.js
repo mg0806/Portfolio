@@ -46,7 +46,9 @@ const Skills = () => {
         <Skill name="MONGODB" x="0vw" y="-20vw" />
         <Skill name="FIREBASE" x="-22vw" y="18vw" />
         <Skill name="TAILWINDCSS" x="20vw" y="18vw" />
-        <Skill name="SQL" x="2vw" y="22vw" />
+        <Skill name="SQL" x="-20vw" y="10vw" />
+        <Skill name="TYPESCRIPT" x="14vw" y="-14vw" />
+        <Skill name="APP DEVELOPMENT" x="0vw" y="24vw" />
       </div>
     </>
   );

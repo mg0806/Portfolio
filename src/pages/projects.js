@@ -166,8 +166,8 @@ const projects = () => {
               <Project
                 title="GEW"
                 img={projectImage3}
-                link="https://gew-vert.vercel.app/"
-                github="https://github.com/mg0806/gew"
+                link="https://www.guptaenggworks.com"
+                github="https://github.com/mg0806/GuptaEngineeringWorks"
                 type="Featured Project"
               />
             </div>

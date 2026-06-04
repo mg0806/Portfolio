@@ -18,7 +18,8 @@ const Footer = () => {
           </span>
           <Link
             href="https://mt-shop.vercel.app"
-            target="blank"
+            target="_blank"
+            rel="noreferrer"
             className=" underline underline-offset-4"
           >
             MTSHOP

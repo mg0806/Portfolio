@@ -9,6 +9,7 @@ import { easeInOut, motion, useMotionValue } from "framer-motion";
 import article3 from "../../public/images/articles/form validation in reactjs using custom react hook.png";
 import article4 from "../../public/images/articles/smooth scrolling in reactjs.png";
 import TransitionEffect from "@/components/TransitionEffect";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const FramerImage = motion(Image);
 
@@ -17,12 +18,14 @@ const MovingImage = ({ title, image, link }) => {
   const y = useMotionValue(0);
   const imageref = useRef(null);
 
-  function handelMouse(event) {
+  function handleMouse(event) {
+    if (!imageref.current) return;
     imageref.current.style.display = "inline-block";
     x.set(event.pageX);
     y.set(-10);
   }
-  function handelMouseLeave(event) {
+  function handleMouseLeave() {
+    if (!imageref.current) return;
     imageref.current.style.display = "none";
     x.set(0);
     y.set(0);
@@ -30,9 +33,10 @@ const MovingImage = ({ title, image, link }) => {
   return (
     <Link
       href={link}
-      target="blank"
-      onMouseMove={handelMouse}
-      onMouseLeave={handelMouseLeave}
+      target={link.startsWith("http") ? "_blank" : undefined}
+      rel={link.startsWith("http") ? "noreferrer" : undefined}
+      onMouseMove={handleMouse}
+      onMouseLeave={handleMouseLeave}
     >
       <h2 className=" capitalize text-xl font-semibold hover:underline">
         {title}
@@ -55,7 +59,7 @@ const Article = ({ img, title, link, date }) => {
     <motion.li
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: easeInOut } }}
-      viewport={{ once: true }} //this is used to load animation just once during page load only.
+      viewport={{ once: true }}
       className=" relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid
        border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light sm:flex-col"
     >
@@ -69,12 +73,13 @@ const Article = ({ img, title, link, date }) => {
 
 const FeaturedArticles = ({ img, title, time, summary, link }) => {
   return (
-    <li className=" col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl relative dark:border-light dark:bg-dark">
+    <article className="w-full p-4 bg-light border border-solid border-dark rounded-2xl relative dark:border-light dark:bg-dark">
       <div className=" absolute top-0 -right-4 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light" />
 
       <Link
         href={link}
-        target="blank"
+        target={link.startsWith("http") ? "_blank" : undefined}
+        rel={link.startsWith("http") ? "noreferrer" : undefined}
         className="w-full inline-block cursor-pointer overflow-hidden rounded-lg"
       >
         <FramerImage
@@ -87,7 +92,11 @@ const FeaturedArticles = ({ img, title, time, summary, link }) => {
           sizes="(max-width:768px) 100vw,(max-width:1200px) 50vw, 50vw"
         />
       </Link>
-      <Link href={link} target="blank">
+      <Link
+        href={link}
+        target={link.startsWith("http") ? "_blank" : undefined}
+        rel={link.startsWith("http") ? "noreferrer" : undefined}
+      >
         <h2 className=" capitalize text-2xl font-bold my-2 mt-2 hover:underline xs:text-lg">
           {title}
         </h2>
@@ -96,7 +105,7 @@ const FeaturedArticles = ({ img, title, time, summary, link }) => {
       <span className=" text-primary font-semibold dark:text-primaryDark">
         {time}
       </span>
-    </li>
+    </article>
   );
 };
 const articles = () => {
@@ -115,25 +124,29 @@ const articles = () => {
             className=" my-14 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
           />
           <ul className=" grid grid-cols-2 gap-16 md:grid-cols-1 lg:gap-8 md:gap-y-16">
-            <FeaturedArticles
-              title="Build A Custom Pagination Component In Reactjs From Scratch"
-              summary="Learn how to build a custom pagination component in ReactJS from
+            <ScrollReveal as="li" className="col-span-1">
+              <FeaturedArticles
+                title="Build A Custom Pagination Component In Reactjs From Scratch"
+                summary="Learn how to build a custom pagination component in ReactJS from
             scratch. Follow this step-by-step guide to integrate Pagination
             component in your ReactJS project."
-              time=" 9 min read"
-              link="/"
-              img={article1}
-            />
+                time=" 9 min read"
+                link="/"
+                img={article1}
+              />
+            </ScrollReveal>
 
-            <FeaturedArticles
-              title="Build A Custom Pagination Component In Reactjs From Scratch"
-              summary="Learn how to build a custom pagination component in ReactJS from
+            <ScrollReveal as="li" delay={0.1} className="col-span-1">
+              <FeaturedArticles
+                title="Build A Custom Pagination Component In Reactjs From Scratch"
+                summary="Learn how to build a custom pagination component in ReactJS from
             scratch. Follow this step-by-step guide to integrate Pagination
             component in your ReactJS project."
-              time=" 9 min read"
-              link="/"
-              img={article1}
-            />
+                time=" 9 min read"
+                link="/"
+                img={article1}
+              />
+            </ScrollReveal>
           </ul>
           <h2 className=" font-bold text-4xl w-full text-center my-16 mt-32">
             All Articles

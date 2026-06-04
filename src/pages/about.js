@@ -8,6 +8,7 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import TransitionEffect from "@/components/TransitionEffect";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const about = () => {
   return (
@@ -24,7 +25,10 @@ const about = () => {
             className=" mb-16 mt-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
           <div className=" grid w-full grid-cols-8 gap-16 sm:gap-8">
-            <div className=" col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
+            <ScrollReveal
+              direction="right"
+              className=" col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8"
+            >
               <h2 className=" mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light">
                 Biography
               </h2>
@@ -49,8 +53,9 @@ const about = () => {
                 dedicated to exceeding expectations and delivering exceptional
                 results.
               </p>
-            </div>
-            <div
+            </ScrollReveal>
+            <ScrollReveal
+              direction="up"
               className=" col-span-3 xl:col-span-4 relative h-max rounded-2xl border-2 border-solid border-dark dark:border-light bg-light p-8
              dark:bg-dark md:order-1 md:col-span-8"
             >
@@ -62,8 +67,11 @@ const about = () => {
                 priority
                 sizes="(max-width:768px) 100vw,(max-width:1200px) 50vw, 33vw"
               />
-            </div>
-            <div className=" col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
+            </ScrollReveal>
+            <ScrollReveal
+              direction="left"
+              className=" col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3"
+            >
               <div className=" flex flex-col items-end justify-center xl:items-center ">
                 <span className=" inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
                   <AnimatedNumbers value={5} />+
@@ -88,7 +96,7 @@ const about = () => {
                   Hours of Experience
                 </h2>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
           <Skills />
           <Experience />

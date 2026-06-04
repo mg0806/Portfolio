@@ -14,6 +14,7 @@ import projectImage6 from "../../public/images/projects/Kanban.png";
 
 import { motion } from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const FramerImage = motion(Image);
 
@@ -26,7 +27,8 @@ const FeaturedProjects = ({ type, title, summary, img, link, github }) => {
       <div className=" absolute top-0 -right-[1rem] -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl dark:bg-light xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]" />
       <Link
         href={link}
-        target="blank"
+        target="_blank"
+        rel="noreferrer"
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
       >
         <FramerImage
@@ -46,10 +48,11 @@ const FeaturedProjects = ({ type, title, summary, img, link, github }) => {
         </span>
         <Link
           href={link}
-          target="blank"
+          target="_blank"
+          rel="noreferrer"
           className=" hover:underline underline-offset-2"
         >
-          <h2 className=" my-2 w-full text-left text-4xl font-bold dark:text-light sm:text-sm">
+          <h2 className=" my-2 w-full text-left text-4xl font-bold dark:text-light sm:text-2xl">
             {title}
           </h2>
         </Link>
@@ -57,12 +60,13 @@ const FeaturedProjects = ({ type, title, summary, img, link, github }) => {
           {summary}
         </p>
         <div className=" mt-2 flex items-center">
-          <Link href={github} target="blank" className="w-10">
+          <Link href={github} target="_blank" rel="noreferrer" className="w-10">
             <GithubIcon />
           </Link>
           <Link
             href={link}
-            target="blank"
+            target="_blank"
+            rel="noreferrer"
             className=" ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark sm:px-4 sm:text-base"
           >
             Visit Project
@@ -86,7 +90,8 @@ const Project = ({ title, type, img, link, github }) => {
 
       <Link
         href={link}
-        target="blank"
+        target="_blank"
+        rel="noreferrer"
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
         <FramerImage
@@ -104,7 +109,8 @@ const Project = ({ title, type, img, link, github }) => {
         </span>
         <Link
           href={link}
-          target="blank"
+          target="_blank"
+          rel="noreferrer"
           className=" hover:underline underline-offset-2"
         >
           <h2 className=" my-2 w-full text-left text-2xl font-bold lg:text-2xl">
@@ -114,12 +120,13 @@ const Project = ({ title, type, img, link, github }) => {
         <div className=" mt-2 flex items-center w-full justify-between">
           <Link
             href={link}
-            target="blank"
+            target="_blank"
+            rel="noreferrer"
             className=" text-lg font-semibold underline md:text-base"
           >
             Visit
           </Link>
-          <Link href={github} target="blank" className="w-8 md:w-6">
+          <Link href={github} target="_blank" rel="noreferrer" className="w-8 md:w-6">
             <GithubIcon />
           </Link>
         </div>
@@ -143,7 +150,7 @@ const projects = () => {
           />
 
           <div className=" grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
-            <div className=" col-span-12">
+            <ScrollReveal as="div" className=" col-span-12">
               <FeaturedProjects
                 title="Ecommerce Website"
                 img={projectImage1}
@@ -152,8 +159,8 @@ const projects = () => {
                 github="/projects"
                 type="Featured Project"
               />
-            </div>
-            <div className=" col-span-6 sm:col-span-12">
+            </ScrollReveal>
+            <ScrollReveal as="div" direction="right" className=" col-span-6 sm:col-span-12">
               <Project
                 title="Ecommerce App"
                 img={projectImage2}
@@ -161,8 +168,8 @@ const projects = () => {
                 github="https://github.com/mg0806/E-commeerce_App"
                 type="Featured Project"
               />
-            </div>
-            <div className=" col-span-6 sm:col-span-12">
+            </ScrollReveal>
+            <ScrollReveal as="div" direction="left" delay={0.1} className=" col-span-6 sm:col-span-12">
               <Project
                 title="GEW"
                 img={projectImage3}
@@ -170,8 +177,8 @@ const projects = () => {
                 github="https://github.com/mg0806/GuptaEngineeringWorks"
                 type="Featured Project"
               />
-            </div>
-            <div className=" col-span-12">
+            </ScrollReveal>
+            <ScrollReveal as="div" className=" col-span-12">
               <FeaturedProjects
                 title="Portfolio"
                 img={projectImage4}
@@ -180,8 +187,8 @@ const projects = () => {
                 github="https://github.com/mg0806/Portfolio"
                 type="Featured Project"
               />
-            </div>
-            <div className=" col-span-6 sm:col-span-12">
+            </ScrollReveal>
+            <ScrollReveal as="div" direction="right" className=" col-span-6 sm:col-span-12">
               <Project
                 title="Old-portfolio"
                 img={projectImage5}
@@ -189,8 +196,8 @@ const projects = () => {
                 github="https://github.com/mg0806/portfolio.gtihub.io"
                 type="Featured Project"
               />
-            </div>
-            <div className=" col-span-6 sm:col-span-12">
+            </ScrollReveal>
+            <ScrollReveal as="div" direction="left" delay={0.1} className=" col-span-6 sm:col-span-12">
               <Project
                 title="Kanban"
                 img={projectImage6}
@@ -198,7 +205,7 @@ const projects = () => {
                 github="https://github.com/mg0806/Kanban"
                 type="Featured Project"
               />
-            </div>
+            </ScrollReveal>
           </div>
         </Layout>
       </main>
